@@ -1,3 +1,1 @@
-nombre1,tipo1
-nombre2,tipo2
-
+nombre1,tipo1,100,Atk1,tipo,false,Atk2,tipo,false,AtkE1,tipo,true,Atk3,tipo,false

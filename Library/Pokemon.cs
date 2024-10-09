@@ -26,13 +26,13 @@ public class Pokemon
 
     public void AgregarAtaque(Ataque a)
     {
-        listaAtk.Add(a );
+        ListaAtk.Add(a );
     }
 
 
-    public Pokemon( string tipo, string nombre)
+    public Pokemon( string tipo, string nombre,int vida)
     {
-        Vida = 100;
+        Vida = vida;
         Tipo = tipo;
         Nombre = nombre;
         ListaAtk = new List<Ataque>(4);
