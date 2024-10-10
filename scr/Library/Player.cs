@@ -22,11 +22,11 @@ public class Player
 
     public void CambiarPokemon(string nombre)
     {
-        foreach (IPokemon VARIABLE in listaPokemons)
+        foreach (IPokemon VARIABLE in pokemonsList)
         {
             if (VARIABLE.Name == nombre)
             {
-                pokemonActivo = VARIABLE;
+                activePokemon = VARIABLE;
             }
             else
             {
@@ -38,7 +38,7 @@ public class Player
     public bool EstaVivo()
     {
         int pokemonMuerto = 0;
-        foreach (IPokemon VARIABLE in listaPokemons)
+        foreach (IPokemon VARIABLE in pokemonsList)
         {
             if (VARIABLE.PS == 0)
             {
@@ -56,11 +56,11 @@ public class Player
 
     public Player(string nombre)
     {
-        Nombre = nombre;
-        ListaPokemons = new List<IPokemon>();
-        PokemonActivo = null;
-        VidaPokemon = PokemonActivo.PS;
-        ListaAtk = pokemonActivo.Attacks;
+        Name = nombre;
+        PokemonsList = new List<IPokemon>();
+        ActivePokemon = null;
+        PokemonHealth = ActivePokemon.PS;
+        AtkList = ActivePokemon.Attacks;
         //Turno=
     }
 }
