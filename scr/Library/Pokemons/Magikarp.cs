@@ -15,47 +15,16 @@ public class Magikarp : IPokemon
         this.spatk = 141;
         this.spdef = 152;
         this.spd = 284;
-        this.attacks.Add(1,);
-        this.attacks.Add(2,);
+        this.attacks = new Dictionary<int, IAttack>()
+        {
+            { 1, new Salpicadura() }, // Agregar ataque Salpicadura
+            { 2, new Placaje() }       // Agregar otro ataque
+        };
     }
-
-    public double DamageCalculator(IAttack attack, IPokemon pokemon)
-    {
-        double stab;
-        if (this.types.Contains(attack.Type))
-        {
-            stab = 1.5;
-        }
-        else
-        {
-            stab = 1;
-        }
-
-        Random rnd = new Random();
-        int variacion = rnd.Next(85, 100);
-        int pot = attack.Potency;
-        double effectiveness = TypeTable.GetEffectiveness(attack.Type, pokemon.Types);
-        double totaldaño;
-        double dañostats;
-
-        if (attack.TypeOfAtack == TypeAttack.Physical)
-        {
-            dañostats = (((0.2 * lvl + 1) * atk * pot) / (25 * pokemon.Def)) + 2;
-            totaldaño = (0.01 * stab * (effectiveness) * variacion * dañostats);
-        }
-        else
-        {
-            dañostats = (((0.2 * lvl + 1) * spatk * pot) / (25 * pokemon.SpDef)) + 2;
-            totaldaño = (0.01 * stab * (effectiveness) * variacion * dañostats);
-        }
-
-        return totaldaño;
-    }
-
+    
     public void UsarAtaque(IAttack attack, IPokemon pokemon)
     {
-        double daño = DamageCalculator(attack,pokemon);
-        pokemon.RecibirDaño(DamageCalculator(attack, pokemon));
+        pokemon.RecibirDaño(Calculate.DamageCalculator(this,attack, pokemon));
     } 
         
     public void RecibirDaño(double Damage)

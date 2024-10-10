@@ -13,7 +13,7 @@ public class Logic
 
     public void Iniciar()
     {
-        while (Jugador1.PokemonActivo.Vida > 0 && Jugador2.PokemonActivo.Vida > 0)
+        while (Jugador1.PokemonActivo.PS > 0 && Jugador2.PokemonActivo.PS > 0)
         {
             Turno(Jugador1, Jugador2);
             if (Jugador2.EstaVivo())
@@ -43,6 +43,7 @@ public class Logic
                 switch (ataqueelegido)
                 {
                     case 1:
+                        if (atacante.PokemonActivo.Attacks[1].)
                         atacante.PokemonActivo.UsarAtaque(atacante.PokemonActivo.Attacks[1],defensor.PokemonActivo);
                     case 2:
                 }

@@ -66,6 +66,18 @@ public static class TypeTable
         types.Add(roca);
     }
 
+    public static Type GetType(string name)
+    {
+        foreach (Type VARIABLE in types)
+        {
+            if (VARIABLE.Name().equals(name)) 
+            { 
+                return VARIABLE;
+            }
+        }
+        return null;
+    }
+
     public static double GetEffectiveness(Type tipoAtacante, List<Type> tipoDefensor)
     {
         double multiplicator = 0;
