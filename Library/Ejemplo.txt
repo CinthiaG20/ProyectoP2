@@ -1,3 +1,0 @@
-nombre1,tipo1
-nombre2,tipo2
-
