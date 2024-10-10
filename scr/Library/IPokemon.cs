@@ -11,7 +11,7 @@ public interface IPokemon
     int Def { get; }
     int SpDef { get; }
     int SpAtk { get; }
-    int Spd { get; }
+    int Vel { get; }
     Dictionary<int,IAttack> Attacks { get; }
 
     void UsarAtaque(IAttack attack, IPokemon pokemon);

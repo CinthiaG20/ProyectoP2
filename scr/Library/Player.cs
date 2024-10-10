@@ -2,17 +2,22 @@ namespace Library;
 
 public class Player
 {
-    private string nombre;
-    public string Nombre { get; set; }
-    private List<IPokemon> listaPokemons;
-    public List<IPokemon> ListaPokemons { get; set; }
-    private IPokemon pokemonActivo;
-    public IPokemon PokemonActivo { get; set; }
-    private double vidaPokemon;
-    public double VidaPokemon { get; set; }
-    private Dictionary<int, IAttack> listaAtk;
-    public Dictionary<int, IAttack> ListaAtk { get; set; }
+    private string name;
+    private Dictionary<int, IAttack> atkList;
+    private List<IPokemon> pokemonsList;
+    private IPokemon activePokemon;
+    private double pokemonHealth;
     private int turno;
+   
+    public string Name { get; set; }
+    public List<IPokemon> PokemonsList { get; set; }
+   
+    public IPokemon ActivePokemon { get; set; }
+   
+    public double PokemonHealth { get; set; }
+    
+    public Dictionary<int, IAttack> AtkList { get; set; }
+  
     public int Turno { get; set; }
 
     public void CambiarPokemon(string nombre)

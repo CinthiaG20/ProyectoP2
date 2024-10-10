@@ -70,7 +70,7 @@ public static class TypeTable
     {
         foreach (Type VARIABLE in types)
         {
-            if (VARIABLE.Name().equals(name)) 
+            if (VARIABLE.Name == name) 
             { 
                 return VARIABLE;
             }
@@ -78,14 +78,14 @@ public static class TypeTable
         return null;
     }
 
-    public static double GetEffectiveness(Type tipoAtacante, List<Type> tipoDefensor)
+    public static double GetEffectiveness(Type tipoAtaque, List<Type> tipoDefensor)
     {
         double multiplicator = 0;
         foreach (Type VARIABLE in tipoDefensor)
         {
-            if (tipoAtacante.Effectiveness.ContainsKey(VARIABLE.Name))
+            if (tipoAtaque.Effectiveness.ContainsKey(VARIABLE.Name))
             {
-                multiplicator += tipoAtacante.Effectiveness[VARIABLE.Name];
+                multiplicator += tipoAtaque.Effectiveness[VARIABLE.Name];
             }
             else multiplicator += 1;
 

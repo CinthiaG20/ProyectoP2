@@ -14,7 +14,7 @@ public class Magikarp : IPokemon
         this.def = 229;
         this.spatk = 141;
         this.spdef = 152;
-        this.spd = 284;
+        this.vel = 284;
         this.attacks = new Dictionary<int, IAttack>()
         {
             { 1, new Salpicadura() }, // Agregar ataque Salpicadura
@@ -41,7 +41,7 @@ public class Magikarp : IPokemon
     private int def;
     private int spatk;
     private int spdef;
-    private int spd;
+    private int vel;
     private Dictionary<int,IAttack> attacks;
     
     public string Name
@@ -78,9 +78,9 @@ public class Magikarp : IPokemon
     {
         get { return spdef; }
     }
-    public int Spd
+    public int Vel
     {
-        get { return spd; }
+        get { return vel; }
     }
 
     public List<Type> Types
