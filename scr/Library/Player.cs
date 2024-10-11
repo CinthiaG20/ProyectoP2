@@ -3,22 +3,26 @@ namespace Library;
 public class Player
 {
     private string name;
-    private Dictionary<int, IAttack> atkList;
-    private List<IPokemon> pokemonsList;
-    private IPokemon activePokemon;
-    private double pokemonHealth;
-    private int turno;
-   
     public string Name { get; set; }
+    
+    private Dictionary<int, IAttack> atkList;
+    public Dictionary<int, IAttack> AtkList { get; set; }
+    
+    private List<IPokemon> pokemonsList;
     public List<IPokemon> PokemonsList { get; set; }
-   
+    
+    private IPokemon activePokemon;
     public IPokemon ActivePokemon { get; set; }
-   
+    
+    private double pokemonHealth;
     public double PokemonHealth { get; set; }
     
-    public Dictionary<int, IAttack> AtkList { get; set; }
-  
-    public int Turno { get; set; }
+    private IAttack ataqueElegido;
+    public IAttack AtaqueElegido { get; set; }
+    
+    private Action accionElegida;
+    public Action AccionElegida { get; set; }
+    
 
     public void CambiarPokemon(string nombre)
     {
@@ -53,6 +57,8 @@ public class Player
 
         return true;
     }
+    
+    
 
     public Player(string nombre)
     {

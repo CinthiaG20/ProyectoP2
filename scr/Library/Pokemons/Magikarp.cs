@@ -25,11 +25,20 @@ public class Magikarp : IPokemon
     public void UsarAtaque(IAttack attack, IPokemon pokemon)
     {
         pokemon.RecibirDaño(Calculate.DamageCalculator(this,attack, pokemon));
+        
     } 
         
     public void RecibirDaño(double Damage)
     {
-        this.PS -= Damage;
+        if (this.PS > Damage)
+        {
+            this.PS -= Damage;
+        }
+        else
+        {
+            this.PS = 0;
+        }
+
     }
 
     private string name;
